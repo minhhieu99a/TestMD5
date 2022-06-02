@@ -1,0 +1,21 @@
+<h1>Sửa thông tin sách</h1>
+<a routerLink="/books">Danh sách sản phẩm</a>
+<br>
+<form (ngSubmit)="updateBook(id)" [formGroup]="bookForm">
+  <input type="hidden" id="id" name="id" formControlName="id">
+  <div>
+    <label for="title">Tên Sách</label>
+    <input formControlName="title" id="title" type="text">
+  </div>
+  <div>
+    <label for="author">Tác giả</label>
+    <input formControlName="author" id="author" type="text">
+  </div>
+  <div>
+    <label for="description">Mô tả</label>
+    <input formControlName="description" id="description" type="text">
+  </div>
+  <div>
+    <button>Sửa</button>
+  </div>
+</form>

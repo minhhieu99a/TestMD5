@@ -1,0 +1,21 @@
+<h1>Danh sách sản phẩm</h1>
+<a routerLink="/books/create">Tạo mới sản phẩm</a>
+<h3>Có {{books.length}} cuốn sách</h3>
+<table>
+  <tr>
+    <th>STT</th>
+    <th>Tittle</th>
+    <th>Author</th>
+    <th>Mô tả</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let book of books; index as i">
+    <td>{{i + 1}}</td>
+    <td><a [routerLink]="['/books/detail', book.id]">{{book.title}}</a></td>
+    <td>{{book.author}}</td>
+    <td>{{book.description}}</td>
+    <td><a [routerLink]="['/books/edit', book.id]">Edit</a></td>
+    <td><a [routerLink]="['/books/delete', book.id]">Delete</a></td>
+  </tr>
+</table>
